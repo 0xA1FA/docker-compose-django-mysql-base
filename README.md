@@ -6,6 +6,8 @@ This is a docker-compose startup project for django and mysql
 - apt-get install docker-compose
 - apt-get install python3
 - apt-get install python3-pip
+- apt-get install python3-django
+- apt-get install libmysqlclient-dev
 
 # usage
 - git clone https://github.com/0xA1FA/docker-compose-django-mysql-base.git
