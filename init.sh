@@ -32,7 +32,7 @@ sed -i "s/DB_ROOT_PWD/$dbrootpwd/g" docker-compose.yml
 
 mkdir db
 echo "create database $project_name">./db/init.sql
-echo "CREATE USER '$project_name'@'10.5.0.5' IDENTIFIED WITH mysql_native_password BY '$django_db_pwd';">>./db/init.sql
+echo "CREATE USER '$project_name'@'10.5.0.6' IDENTIFIED WITH mysql_native_password BY '$django_db_pwd';">>./db/init.sql
 echo "GRANT ALL PRIVILEGES ON $project_name.* TO '$project_name'@'10.5.0.5' WITH GRANT OPTION;">>./db/init.sql
 echo "FLUSH PRIVILEGES;">>./db/init.sql
 
