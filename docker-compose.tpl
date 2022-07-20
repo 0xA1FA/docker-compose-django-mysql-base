@@ -13,6 +13,11 @@ services:
     volumes:
       - db:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-uroot", "-pDB_ROOT_PWD"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
     networks:
       vpcbr:
         ipv4_address: 10.5.0.5
@@ -28,7 +33,8 @@ services:
     volumes:
       - ./docker-images/django/app:/app
     depends_on:
-      - db
+      db: 
+        condition: service_healthy
 
 volumes:
   db:

@@ -7,4 +7,3 @@ RUN apt-get install libmariadb-dev
 RUN pip install -r requirements.txt
 RUN mkdir -p /app/project_name
 COPY ./app/project_name /app/project_name
- 

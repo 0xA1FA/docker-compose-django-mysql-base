@@ -17,4 +17,4 @@ This is a docker-compose startup project for django and mysql
 - ./cleanup.sh to remove the template files and the git repository.
 - docker-compose up
 - http://localhost:8000 and you are good to go with a docker-compose django project linked to a mysql db.
-
+- make the django migration with : docker exec -it $(docker ps | grep web | awk '{split($0,a," "); print a[1]}') python3 manage.py migrate
